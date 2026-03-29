@@ -2,6 +2,69 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
-    background-color: #F6F7F8;
+@layer base {
+  :root {
+    --bg: #fffaf5;
+    --surface: #ffffff;
+    --surface-soft: #fff1e6;
+    --text: #1f2937;
+    --text-soft: #6b7280;
+    --brand: #b91c1c;
+    --brand-dark: #7f1d1d;
+    --accent: #f59e0b;
+    --success: #16a34a;
+    --danger: #dc2626;
+  }
+
+  body {
+    font-family: "Poppins", sans-serif;
+    background: radial-gradient(circle at top, #fff5ed, var(--bg) 40%);
+    color: var(--text);
+  }
+}
+
+@layer components {
+  .header-overlay {
+    background: linear-gradient(180deg, rgba(24, 24, 27, 0.38), rgba(24, 24, 27, 0.82));
+  }
+
+  .section-title {
+    @apply text-2xl md:text-3xl font-bold text-center tracking-wide text-red-900;
+  }
+
+  .subsection-title {
+    @apply font-bold text-2xl md:text-3xl text-red-900;
+  }
+
+  .menu-card {
+    @apply w-full rounded-2xl bg-white shadow-md hover:shadow-xl transition duration-300 p-3 sm:p-4 flex gap-3 items-start border border-orange-100;
+  }
+
+  .menu-image {
+    @apply w-24 h-24 sm:w-28 sm:h-28 rounded-xl object-cover shadow-sm hover:scale-105 hover:-rotate-2 transition duration-300;
+  }
+
+  .menu-title {
+    @apply font-semibold text-base md:text-lg text-zinc-900;
+  }
+
+  .menu-description {
+    @apply text-sm leading-relaxed text-zinc-600 mt-1;
+  }
+
+  .menu-price {
+    @apply font-bold text-lg text-red-900;
+  }
+
+  .add-btn {
+    @apply bg-red-700 hover:bg-red-800 text-white px-4 py-2 rounded-lg transition duration-200 shadow-sm;
+  }
+
+  .status-open {
+    @apply bg-green-600 text-white;
+  }
+
+  .status-closed {
+    @apply bg-red-600 text-white;
+  }
 }

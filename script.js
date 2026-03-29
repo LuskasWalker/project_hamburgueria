@@ -178,6 +178,15 @@ const spanItem = document.getElementById("date-span");
 const isOpen = checkRestaurantOpen();
 
 if (isOpen) {
+  spanItem.classList.remove("status-closed");
+  spanItem.classList.add("status-open");
+  time.classList.add("hidden");
+} else {
+  spanItem.classList.remove("status-open");
+  spanItem.classList.add("status-closed");
+  time.classList.remove("hidden");
+  checkoutBtn.classList.remove("bg-green-600", "hover:bg-green-700");
+  checkoutBtn.classList.add("bg-red-600", "hover:bg-red-700");
   spanItem.classList.remove("bg-red-500");
   spanItem.classList.add("bg-green-500");
   time.classList.add("hidden");
