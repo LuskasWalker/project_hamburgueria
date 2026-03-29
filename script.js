@@ -8,9 +8,20 @@ const closeModalBtn = document.getElementById("close-modal-btn");
 const cartCounter = document.getElementById("cart-count");
 const addressInput = document.getElementById("address");
 const addressWarn = document.getElementById("address-warn");
-const time = document.getElementById("time-warn")
+const time = document.getElementById("time-warn");
 
 let cart = [];
+
+function parsePrice(rawPrice) {
+  return Number.parseFloat(String(rawPrice).replace(",", "."));
+}
+
+function formatCurrency(value) {
+  return value.toLocaleString("pt-BR", {
+    style: "currency",
+    currency: "BRL",
+  });
+}
 
 cartBtn.addEventListener("click", function () {
   updateCartModal();
@@ -28,10 +39,15 @@ closeModalBtn.addEventListener("click", function () {
 });
 
 menu.addEventListener("click", function (event) {
-  let parentButton = event.target.closest(".add-to-cart-btn");
+  const parentButton = event.target.closest(".add-to-cart-btn");
   if (parentButton) {
     const name = parentButton.getAttribute("data-name");
-    const price = parseFloat(parentButton.getAttribute("data-price"));
+    const price = parsePrice(parentButton.getAttribute("data-price"));
+
+    if (Number.isNaN(price)) {
+      return;
+    }
+
     addToCart(name, price);
   }
 });
@@ -82,12 +98,10 @@ function updateCartModal() {
     cartItemsContainer.appendChild(cartItemElement);
   });
 
-  cartTotal.textContent = total.toLocaleString("pt-BR", {
-    style: "currency",
-    currency: "BRL",
-  });
+  cartTotal.textContent = formatCurrency(total);
 
-  cartCounter.innerHTML = cart.length;
+  const totalItems = cart.reduce((acc, item) => acc + item.qtd, 0);
+  cartCounter.textContent = totalItems;
 }
 
 cartItemsContainer.addEventListener("click", function (event) {
@@ -116,62 +130,61 @@ function removeItemCart(name) {
 }
 
 addressInput.addEventListener("input", function (event) {
-  let inputValue = event.target.value;
+  const inputValue = event.target.value.trim();
   if (inputValue !== "") {
-    addressInput.classList.remove("border-red-500")
-    addressWarn.classList.add('hidden')
+    addressInput.classList.remove("border-red-500");
+    addressWarn.classList.add("hidden");
   }
-})
+});
 
 checkoutBtn.addEventListener("click", function () {
   const isOpen = checkRestaurantOpen();
-  if(!isOpen){
-    return
+  if (!isOpen) {
+    return;
   }
 
   if (cart.length === 0) return;
-  if (addressInput.value === "") {
-    addressWarn.classList.remove('hidden')
-    addressInput.classList.add("border-red-500")
-    return
+  const address = addressInput.value.trim();
+
+  if (address === "") {
+    addressWarn.classList.remove("hidden");
+    addressInput.classList.add("border-red-500");
+    return;
   }
 
-  const cartItem = cart.map((item) => {
-    return (
-      `${item.qtd}x ${item.name}`
-    )
-  }).join("\n")
+  const cartItem = cart.map((item) => `${item.qtd}x ${item.name}`).join("\n");
 
-  let totalPrice = 0;
-  
-  cart.forEach((item) => {
-    totalPrice += item.qtd * item.price
-  })
-    
-  const message = encodeURIComponent(cartItem)
-  const phone = "5549989128778"
+  const totalPrice = cart.reduce((acc, item) => acc + item.qtd * item.price, 0);
+  const message = encodeURIComponent(
+    `${cartItem}\nTotal: ${formatCurrency(totalPrice)}\nEndereço: ${address}`
+  );
+  const phone = "5549989128778";
 
-  window.open(`https://wa.me/${phone}?text=${message}%0ATotal: R$ ${totalPrice.toFixed(2)}%0AEndereço: ${addressInput.value}`, "_blank")
+  window.open(`https://wa.me/${phone}?text=${message}`, "_blank");
 
-})
+  cart = [];
+  updateCartModal();
+  addressInput.value = "";
+  cartModal.style.display = "none";
+});
 
-function checkRestaurantOpen(){
+function checkRestaurantOpen() {
   const data = new Date();
   const hora = data.getHours();
   return hora >= 18 && hora < 22;
 }
 
-const spanItem = document.getElementById("date-span")
-const isOpen = checkRestaurantOpen()
+const spanItem = document.getElementById("date-span");
+const isOpen = checkRestaurantOpen();
 
-if(isOpen){
-  spanItem.classList.remove("bg-red-500")
-  spanItem.classList.add("bg-green-500")
-  time.classList.add("hidden")
-}else{
-  spanItem.classList.remove("bg-green-500")
-  spanItem.classList.add("bg-red-500")
-  time.classList.remove("hidden")
-  checkoutBtn.classList.remove("bg-green-500")
-  checkoutBtn.classList.add("bg-red-500")
+if (isOpen) {
+  spanItem.classList.remove("bg-red-500");
+  spanItem.classList.add("bg-green-500");
+  time.classList.add("hidden");
+} else {
+  spanItem.classList.remove("bg-green-500");
+  spanItem.classList.add("bg-red-500");
+  time.classList.remove("hidden");
+  checkoutBtn.classList.remove("bg-green-500");
+  checkoutBtn.classList.add("bg-red-500");
 }
