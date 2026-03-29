@@ -21,48 +21,48 @@
     <title>Dev Burguer</title>
   </head>
   <body>
-    <header class="w-full h-[420px] bg-zinc-900 bg-home bg-cover bg-center">
-      <div class="w-full h-full flex flex-col justify-center items-center">
+    <header class="w-full h-[460px] bg-zinc-900 bg-home bg-cover bg-center">
+      <div class="w-full h-full header-overlay flex flex-col justify-center items-center px-4 text-center">
         <img
           src="./assets/hamb-1.png"
           alt="Logo DevBurguer"
-          class="w-32 h-32 rounded-full shadow-lg hover:scale-110 duration-200"
+          class="w-32 h-32 rounded-full border-4 border-orange-200 shadow-xl hover:scale-105 duration-200 object-cover"
         />
-        <h1 class="text-4xl mt-4 mb-2 font-bold text-white">Dev Burguer</h1>
+        <h1 class="text-4xl mt-4 mb-2 font-bold text-white tracking-wide">Dev Burguer</h1>
 
         <span class="text-white font-medium">
           Rua Modesto Bacarim 198-D
         </span>
 
-        <div class="bg-green-600 px-4 py-1 rounded-lg mt-5" id="date-span">
+        <div class="status-open px-4 py-1 rounded-full mt-5 text-sm font-medium" id="date-span">
           <span class="text-white"> Seg a Dom - 18:00 as 22:00 </span>
         </div>
       </div>
     </header>
 
-    <h2 class="text-2xl md:text-3xl font-bold text-center mt-9 mb-9">
+    <h2 class="section-title mt-10 mb-8">
       CARDÁPIO
     </h2>
 
     <div id="menu">
       <main
-        class="grid grid-cols-1 md:grid-cols-2 gap-7 md:gap-10 mx-auto max-w-7xl px-2 mb-16"
+        class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mx-auto max-w-7xl px-3 mb-14"
       >
-        <div class="flex gap-2 w-full">
+        <div class="menu-card">
           <img
             src="assets/hamb-1.png"
             alt="Hamburguer Smash Duplo"
-            class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+            class="menu-image"
           />
           <div class="w-full">
-            <p class="font-bold">Hamburguer Smash Duplo</p>
-            <p class="text-sm">Dois hambúrgueres de carne bovina, queijo, pão de hambúrguer, picles, cebola e maionese.</p>
+            <p class="menu-title">Hamburguer Smash Duplo</p>
+            <p class="menu-description">Dois hambúrgueres de carne bovina, queijo, pão de hambúrguer, picles, cebola e maionese.</p>
             <div class="flex items-center gap-2 justify-between mt-3">
-              <p class="font-bold text-lg">R$ 22,90</p>
+              <p class="menu-price">R$ 22,90</p>
               <button
-                class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                class="add-btn add-to-cart-btn"
                 data-name="Hamburguer Smash Duplo"
-                data-price="22,90"
+                data-price="22.90"
               >
                 <i class="fa fa-cart-plus text-lg text-white"></i>
               </button>
@@ -70,21 +70,21 @@
           </div>
         </div>
 
-        <div class="flex gap-2 w-full">
+        <div class="menu-card">
           <img
             src="assets/hamb-2.png"
             alt="Hamburguer Duplo Beacon"
-            class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+            class="menu-image"
           />
           <div class="w-full">
-            <p class="font-bold">Hamburguer Duplo Beacon</p>
-            <p class="text-sm">Dois hambúrgueres de carne bovina, bacon, queijo, pão de hambúrguer, alface, tomate, cebola, picles, maionese, ketchup e mostarda.</p>
+            <p class="menu-title">Hamburguer Duplo Beacon</p>
+            <p class="menu-description">Dois hambúrgueres de carne bovina, bacon, queijo, pão de hambúrguer, alface, tomate, cebola, picles, maionese, ketchup e mostarda.</p>
             <div class="flex items-center gap-2 justify-between mt-3 md:mt-1">
-              <p class="font-bold text-lg">R$ 29,90</p>
+              <p class="menu-price">R$ 29,90</p>
               <button
-                class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                class="add-btn add-to-cart-btn"
                 data-name="Hamburguer Duplo Beacon"
-                data-price="29,90"
+                data-price="29.90"
               >
                 <i class="fa fa-cart-plus text-lg text-white"></i>
               </button>
@@ -92,21 +92,21 @@
           </div>
         </div>
 
-        <div class="flex gap-2">
+        <div class="menu-card">
           <img
             src="assets/hamb-3.png"
             alt="Hamburguer Duplo"
-            class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+            class="menu-image"
           />
           <div class="w-full">
-            <p class="font-bold">Hamburguer Duplo</p>
-            <p class="text-sm">Dois hambúrgueres de carne bovina, queijo, pão de hambúrguer, alface, tomate, cebola, picles, maionese, ketchup e mostarda.</p>
+            <p class="menu-title">Hamburguer Duplo</p>
+            <p class="menu-description">Dois hambúrgueres de carne bovina, queijo, pão de hambúrguer, alface, tomate, cebola, picles, maionese, ketchup e mostarda.</p>
             <div class="flex items-center gap-2 justify-between mt-3 md:mt-1">
-              <p class="font-bold text-lg">R$ 25,90</p>
+              <p class="menu-price">R$ 25,90</p>
               <button
-                class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                class="add-btn add-to-cart-btn"
                 data-name="Hamburguer Duplo"
-                data-price="25,90"
+                data-price="25.90"
               >
                 <i class="fa fa-cart-plus text-lg text-white"></i>
               </button>
@@ -114,21 +114,21 @@
           </div>
         </div>
 
-        <div class="flex gap-2">
+        <div class="menu-card">
           <img
             src="assets/hamb-4.png"
             alt="Hamburguer Chicken"
-            class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+            class="menu-image"
           />
           <div class="w-full">
-            <p class="font-bold">Hamburguer Chicken</p>
-            <p class="text-sm">Filé de frango empanado, queijo, pão de hambúrguer, alface, tomate, cebola, picles, maionese e ketchup.</p>
+            <p class="menu-title">Hamburguer Chicken</p>
+            <p class="menu-description">Filé de frango empanado, queijo, pão de hambúrguer, alface, tomate, cebola, picles, maionese e ketchup.</p>
             <div class="flex items-center gap-2 justify-between mt-3 md:mt-1">
-              <p class="font-bold text-lg">R$ 19,90</p>
+              <p class="menu-price">R$ 19,90</p>
               <button
-                class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                class="add-btn add-to-cart-btn"
                 data-name="Hamburguer Chicken"
-                data-price="19,90"
+                data-price="19.90"
               >
                 <i class="fa fa-cart-plus text-lg text-white"></i>
               </button>
@@ -136,21 +136,21 @@
           </div>
         </div>
 
-        <div class="flex gap-2">
+        <div class="menu-card">
           <img
             src="assets/hamb-5.png"
-            alt="Hamburguer Smash 1"
-            class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+            alt="Hamburguer Duplo Cheddar"
+            class="menu-image"
           />
           <div class="w-full">
-            <p class="font-bold">Hamburguer Duplo Cheddar</p>
-            <p class="text-sm">Dois hambúrgueres de carne bovina, queijo cheddar, pão de hambúrguer, alface, tomate, cebola, picles, maionese e ketchup.</p>
+            <p class="menu-title">Hamburguer Duplo Cheddar</p>
+            <p class="menu-description">Dois hambúrgueres de carne bovina, queijo cheddar, pão de hambúrguer, alface, tomate, cebola, picles, maionese e ketchup.</p>
             <div class="flex items-center gap-2 justify-between mt-3 md:mt-1">
-              <p class="font-bold text-lg">R$ 25,90</p>
+              <p class="menu-price">R$ 25,90</p>
               <button
-                class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                class="add-btn add-to-cart-btn"
                 data-name="Hamburguer Duplo Cheddar"
-                data-price="25,90"
+                data-price="25.90"
               >
                 <i class="fa fa-cart-plus text-lg text-white"></i>
               </button>
@@ -158,21 +158,21 @@
           </div>
         </div>
 
-        <div class="flex gap-2">
+        <div class="menu-card">
           <img
             src="assets/hamb-6.png"
             alt="Hamburguer Smash Simples"
-            class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+            class="menu-image"
           />
           <div class="w-full">
-            <p class="font-bold">Hamburguer Smash Simples</p>
-            <p class="text-sm">hambúrguer de carne bovina finamente prensado na chapa, queijo, pão de hambúrguer, picles, cebola e maionese.</p>
+            <p class="menu-title">Hamburguer Smash Simples</p>
+            <p class="menu-description">hambúrguer de carne bovina finamente prensado na chapa, queijo, pão de hambúrguer, picles, cebola e maionese.</p>
             <div class="flex items-center gap-2 justify-between mt-3 md:mt-1">
-              <p class="font-bold text-lg">R$ 19,90</p>
+              <p class="menu-price">R$ 19,90</p>
               <button
-                class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                class="add-btn add-to-cart-btn"
                 data-name="Hamburguer Smash Simples"
-                data-price="19,90"
+                data-price="19.90"
               >
                 <i class="fa fa-cart-plus text-lg text-white"></i>
               </button>
@@ -180,21 +180,21 @@
           </div>
         </div>
 
-        <div class="flex gap-2">
+        <div class="menu-card">
           <img
             src="assets/hamb-7.png"
             alt="Hamburguer Da Casa"
-            class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+            class="menu-image"
           />
           <div class="w-full">
-            <p class="font-bold">Hamburguer Da Casa</p>
-            <p class="text-sm">Hambúrguer de carne bovina, queijo, pão de hambúrguer artesanal, alface, tomate, cebola caramelizada, picles, bacon, maionese e molho barbecue.</p>
+            <p class="menu-title">Hamburguer Da Casa</p>
+            <p class="menu-description">Hambúrguer de carne bovina, queijo, pão de hambúrguer artesanal, alface, tomate, cebola caramelizada, picles, bacon, maionese e molho barbecue.</p>
             <div class="flex items-center gap-2 justify-between mt-3 md:mt-1">
-              <p class="font-bold text-lg">R$ 25,90</p>
+              <p class="menu-price">R$ 25,90</p>
               <button
-                class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                class="add-btn add-to-cart-btn"
                 data-name="Hamburguer Da Casa"
-                data-price="25,90"
+                data-price="25.90"
               >
                 <i class="fa fa-cart-plus text-lg text-white"></i>
               </button>
@@ -202,21 +202,21 @@
           </div>
         </div>
 
-        <div class="flex gap-2 w-full">
+        <div class="menu-card">
           <img
             src="assets/hamb-8.png"
-            alt="Hamburguer Smash 1"
-            class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+            alt="Hambúrguer Salad"
+            class="menu-image"
           />
           <div class="w-full">
-            <p class="font-bold">Hamburguer Salad</p>
-            <p class="text-sm">hambúrguer de carne bovina, queijo, pão de hambúrguer, alface, tomate, cebola roxa, picles e maionese.</p>
+            <p class="menu-title">Hamburguer Salad</p>
+            <p class="menu-description">hambúrguer de carne bovina, queijo, pão de hambúrguer, alface, tomate, cebola roxa, picles e maionese.</p>
             <div class="flex items-center gap-2 justify-between mt-3 md:mt-1">
-              <p class="font-bold text-lg">R$ 19,90</p>
+              <p class="menu-price">R$ 19,90</p>
               <button
-                class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                class="add-btn add-to-cart-btn"
                 data-name="Hamburguer Salad"
-                data-price="19,90"
+                data-price="19.90"
               >
                 <i class="fa fa-cart-plus text-lg text-white"></i>
               </button>
@@ -226,27 +226,26 @@
       </main>
 
       <div class="mx-auto max-w-7xl px-2 my-2">
-        <h2 class="font-bold text-3xl">BEBIDAS</h2>
+        <h2 class="subsection-title">BEBIDAS</h2>
       </div>
 
       <div
-        class="grid grid-cols-1 md:grid-cols-2 gap-7 md:gap-10 mx-auto max-w-7xl px-2 mb-16"
-        id="menu"
+        class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mx-auto max-w-7xl px-3 mb-14"
       >
-        <div class="flex gap-2 w-full">
+        <div class="menu-card">
           <img
             src="assets/refri-2.png"
-            alt="Hamburguer Smash 1"
-            class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+            alt="Guaraná em lata"
+            class="menu-image"
           />
           <div class="w-full">
-            <p class="font-bold">Guarana Lata</p>
+            <p class="menu-title">Guarana Lata</p>
             <div class="flex items-center gap-2 justify-between mt-3">
-              <p class="font-bold text-lg">R$ 7,00</p>
+              <p class="menu-price">R$ 7,00</p>
               <button
-                class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                class="add-btn add-to-cart-btn"
                 data-name="Guarana"
-                data-price="7,0"
+                data-price="7.00"
               >
                 <i class="fa fa-cart-plus text-lg text-white"></i>
               </button>
@@ -254,20 +253,20 @@
           </div>
         </div>
 
-        <div class="flex gap-2 w-full">
+        <div class="menu-card">
           <img
             src="assets/refri-1.png"
             alt="Coca Cola"
-            class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+            class="menu-image"
           />
           <div class="w-full">
-            <p class="font-bold">Coca Cola Lata</p>
+            <p class="menu-title">Coca Cola Lata</p>
             <div class="flex items-center gap-2 justify-between mt-3">
-              <p class="font-bold text-lg">R$ 8,00</p>
+              <p class="menu-price">R$ 8,00</p>
               <button
-                class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                class="add-btn add-to-cart-btn"
                 data-name="Coca Cola"
-                data-price="7,00"
+                data-price="8.00"
               >
                 <i class="fa fa-cart-plus text-lg text-white"></i>
               </button>
@@ -278,18 +277,18 @@
     </div>
 
     <div
-      class="bg-black/90 w-full h-full fixed top-0 left-0 z-[99] items-center justify-center hidden" id="cart-modal"
+      class="bg-black/80 backdrop-blur-sm w-full h-full fixed top-0 left-0 z-[99] items-center justify-center hidden" id="cart-modal"
     >
-      <div class="bg-white p-5 rounded-md min-w-[90%] md:min-w-[600px]">
-        <h2 class="text-center font-bold text-2xl mb-2">Meu Carinho</h2>
+      <div class="bg-white p-6 rounded-2xl min-w-[92%] md:min-w-[620px] shadow-2xl border border-orange-100">
+        <h2 class="text-center font-bold text-2xl mb-2">Meu Carrinho</h2>
         <div id="cart-items" class="flex justify-between mb-2 flex-col"></div>
-        <p class="font-bold">Total: <span id="cart-total">0.00</span></p>
+        <p class="menu-title">Total: <span id="cart-total">0.00</span></p>
         <p class="font-bold mt-4">Endereço de Entrega</p>
         <input
           type="text"
           placeholder="Digite o endereço de entrega"
           id="address"
-          class="w-full border-2 p-1 rounded my-1"
+          class="w-full border-2 border-orange-200 p-2 rounded-lg my-1 focus:outline-none focus:ring-2 focus:ring-orange-300"
         />
         <p class="text-red-500 hidden" id="address-warn">
           Digite o endereço de entrega
@@ -298,10 +297,10 @@
           O restaurante está fechado no momento
         </p>
         <div class="flex items-center justify-between mt-5 w-full">
-          <button id="close-modal-btn">Fechar</button>
+          <button id="close-modal-btn" class="text-zinc-700 font-medium hover:text-zinc-900 transition">Fechar</button>
           <button
             id="checkout-btn"
-            class="bg-green-500 text-white px-4 py-1 rounded-md"
+            class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg transition"
           >
             Finalizar Pedido
           </button>
@@ -310,7 +309,7 @@
     </div>
 
     <footer
-      class="w-full bg-red-500 py-2 fixed bottom-0 z-40 flex items justify-center"
+      class="w-full bg-red-800 py-3 fixed bottom-0 z-40 flex items justify-center shadow-[0_-6px_20px_rgba(127,29,29,0.25)]"
     >
       <button
         class="flex items-center gap-2 text-white font-bold"
