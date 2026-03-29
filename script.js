@@ -187,4 +187,13 @@ if (isOpen) {
   time.classList.remove("hidden");
   checkoutBtn.classList.remove("bg-green-600", "hover:bg-green-700");
   checkoutBtn.classList.add("bg-red-600", "hover:bg-red-700");
+  spanItem.classList.remove("bg-red-500");
+  spanItem.classList.add("bg-green-500");
+  time.classList.add("hidden");
+} else {
+  spanItem.classList.remove("bg-green-500");
+  spanItem.classList.add("bg-red-500");
+  time.classList.remove("hidden");
+  checkoutBtn.classList.remove("bg-green-500");
+  checkoutBtn.classList.add("bg-red-500");
 }
